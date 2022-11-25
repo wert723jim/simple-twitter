@@ -3,7 +3,7 @@
     <img src="../assets/logo.png" alt="" class="brand-logo">
     <form action="">
       <div class="form-title">
-        <h3>登入 Alphitter</h3>
+        <h3>建立你的帳號</h3>
       </div>
       <div class="form-label-group">
         <label for="account">
@@ -13,6 +13,28 @@
           type="text" 
           placeholder="請輸入帳號"
           id="account"
+        >
+      </div>
+
+      <div class="form-label-group">
+        <label for="name">
+          名稱
+        </label>
+        <input 
+          type="text" 
+          placeholder="請輸入使用者名稱"
+          id="name"
+        >
+      </div>
+
+      <div class="form-label-group">
+        <label for="email">
+          Email
+        </label>
+        <input 
+          type="text" 
+          placeholder="請輸入Email"
+          id="email"
         >
       </div>
 
@@ -27,18 +49,27 @@
         >
       </div>
 
+      <div class="form-label-group">
+        <label for="password-confirm">
+          密碼確認
+        </label>
+        <input 
+          type="password" 
+          placeholder="請再次輸入密碼"
+          id="password-confirm"
+        >
+      </div>
+
       <button
         type="submit"
         class="btn"
       >
-        登入
+        註冊
       </button>
     </form>
 
     <div class="tunel">
-      <router-link to="regist">註冊</router-link>
-      <span>・</span>
-      <a href="#">後台登入</a>
+      <router-link to="router.back()">取消</router-link>
     </div>
 
   </div>
@@ -105,7 +136,7 @@
 
   .tunel {
     margin-top: 22px;
-    text-align: end;
+    text-align: center;
   }
 
   .tunel a {
