@@ -11,6 +11,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
 }
 
 *,
@@ -21,7 +24,8 @@
 html,
 body {
   /* width: 100%; */
-  /* height: 100%; */
+  height: 100%;
+  margin: 0;
 }
 
 h1,
