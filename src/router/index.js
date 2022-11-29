@@ -19,6 +19,11 @@ const routes = [
     component: Main
   },
   {
+    path: '/postreply',
+    name: 'post-reply',
+    component: () => import('../views/PostReply.vue')
+  },
+  {
     path: '/login',
     name: 'log-in',
     component: LogIn
