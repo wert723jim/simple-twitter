@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import NotFound from '../views/NotFound.vue'
 import LogIn from '../views/LogIn.vue'
 import Main from '../views/Main.vue'
@@ -11,7 +10,7 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    redirect: '/main'
   },
   {
     path: '/main',
@@ -19,7 +18,7 @@ const routes = [
     component: Main
   },
   {
-    path: '/postreply',
+    path: '/postreply/:id',
     name: 'post-reply',
     component: () => import('../views/PostReply.vue')
   },
@@ -32,6 +31,11 @@ const routes = [
     path: '/regist',
     name: 'regist',
     component: () => import('../views/Regist.vue')
+  },
+  {
+    path: '/user/:id',
+    name: 'user',
+    component: () => import('../views/User.vue')
   },
   {
     path: '/about',
