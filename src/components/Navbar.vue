@@ -19,10 +19,11 @@
             </router-link>
           </li>
           <li class="item">
-            <a href="#" class="item-link">
+            <router-link to="/setting" class="item-link">
               <img src="../assets/setting_hollow_2x.png" alt="" class="item-img">
+              <img src="../assets/setting_filled_2x.png" alt="" class="item-img-selected">
               設定
-            </a>
+            </router-link>
           </li>
         </ul>
       </div>
