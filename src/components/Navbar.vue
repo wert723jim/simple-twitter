@@ -5,16 +5,18 @@
       <div class="nav-list">
         <ul class="list-items">
           <li class="item">
-            <a href="#" class="item-link">
+            <router-link to="/main" class="item-link">
               <img src="../assets/home_hollow_2x.png" alt="" class="item-img">
+              <img src="../assets/home_filled_2x.png" alt="" class="item-img-selected">
               首頁
-            </a>
+            </router-link>
           </li>
           <li class="item">
-            <a href="#" class="item-link">
+            <router-link to="/user/1" class="item-link">
               <img src="../assets/info_hollow_2x.png" alt="" class="item-img">
+              <img src="../assets/info_filled_2x.png" alt="" class="item-img-selected">
               個人資料
-            </a>
+            </router-link>
           </li>
           <li class="item">
             <a href="#" class="item-link">
@@ -71,16 +73,32 @@
     font-size: 18px;
   }
 
+  .item-img,
+  .item-img-selected {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+  }
+
+  .item-img-selected {
+    display: none;
+  }
+
   .item-link {
     display: flex;
     align-items: center;
     color: black;
   }
 
-  .item-img {
-    width: 24px;
-    height: 24px;
-    margin-right: 16px;
+  .item-link.active {
+    color: #FF6600;
+  }
+
+  .item-link.active .item-img-selected {
+    display: block;
+  }
+  .item-link.active .item-img {
+    display: none;
   }
 
   .btn {
