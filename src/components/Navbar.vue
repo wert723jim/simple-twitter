@@ -1,5 +1,9 @@
 <template>
   <nav class="nav">
+    <TweetModal 
+      :show-modal="isShow"
+      @close-modal="closeModal"
+    />
     <img src="../assets/logo.png" alt="" class="brand-logo">
     <div class="nav-tools">
       <div class="nav-list">
@@ -28,7 +32,10 @@
         </ul>
       </div>
       <div class="nav-btn">
-        <button  class="btn">
+        <button
+          class="btn"
+          @click="showModal"
+        >
           推文
         </button>
       </div>
@@ -42,11 +49,33 @@
   </nav>
 </template>
 
+<script>
+import TweetModal from '../components/TweetModal.vue'
+export default {
+  components: {
+    TweetModal,
+  },
+  data() {
+    return {
+      isShow: false
+    }
+  },
+  methods: {
+    showModal() {
+      this.isShow = true
+    },
+    closeModal(close) {
+      this.isShow = close
+    }
+  }
+}
+</script>
+
 <style scoped>
   .nav {
     display: flex;
     flex-direction: column;
-    position: fixed;
+    /* position: fixed; */
     z-index: 999;
     width: 178px;
     height: 100%;
@@ -62,6 +91,7 @@
   }
 
   .nav-tools {
+    /* 占滿剩餘空間 */
     flex: 1;
   }
 

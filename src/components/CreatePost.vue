@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="create-post-container">
     <div class="avatar-img">
       <div class="user-img"></div>
     </div>
@@ -15,7 +15,7 @@
 </template>
 
 <style scoped>
-  .container {
+  .create-post-container {
     display: flex;
     width: 100%;
     /* 讓此component可以根據view內所設定的高度做變化 */
