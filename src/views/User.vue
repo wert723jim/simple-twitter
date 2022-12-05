@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <Navbar />
+    <div class="navbar">
+      <Navbar />
+    </div>
     <div class="mid-column">
       <!-- title -->
       <div class="page-title">
@@ -58,10 +60,8 @@ export default {
 
 <style scoped>
   .container {
-    position: relative;
     display: flex;
     height: 100%;
-    justify-items: space-between;
   }
 /* 返回鍵 */
   .vector {
@@ -83,8 +83,7 @@ export default {
     display: flex;
     flex-direction: column;
     flex: 1;
-    margin-left: 202px;
-    margin-right: 24px;
+    margin: 0 24px;
     height: 100%;
     border-left: 1px solid #E6ECF0;
     border-right: 1px solid #E6ECF0;
@@ -92,7 +91,9 @@ export default {
 
   .page-title {
     display: flex;
-    padding: 24px 0 24px 23px;
+    align-items: center;
+    padding-left: 23px;
+    height: 74px;
     text-align: left;
     color: #171725;
     border-bottom: 1px solid #E6ECF0;
@@ -108,6 +109,7 @@ export default {
     height: 136px;
   }
   .scrollbar {
+    flex: 1;
     overflow-y: scroll;
   }
 
