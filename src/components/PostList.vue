@@ -21,7 +21,10 @@
           aspernatur et eum. Recusandae, nostrum omnis?
         </div>
         <div class="post-icons">
-          <div class="post-icons-comments">
+          <div
+            class="post-icons-comments"
+            @click="showModal"
+          >
             <img src="../assets/icon_reply.png" alt="" class="icon"/>
             <span class="post-icons-comments-count count">14</span>
           </div>
@@ -134,6 +137,19 @@
   </div>
 </template>
 
+<script>
+export default {
+  methods: {
+    showModal() {
+      // postId
+      let postId = '1'
+      console.log('postList-showModal',postId)
+      this.$emit("post-id", postId)
+    }
+  }
+}
+</script>
+
 <style scoped>
 .posts-container {
   height: 100%;
@@ -188,10 +204,12 @@
 .post-icons-comments {
   display: flex;
   margin-right: 41.3px;
+  cursor: pointer;
 }
 
 .post-icons-likes {
   display: flex;
+  cursor: pointer;
 }
 
 .icon {
