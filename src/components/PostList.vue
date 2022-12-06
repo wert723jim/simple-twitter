@@ -1,5 +1,9 @@
 <template>
   <div class="posts-container">
+    <ReplyModal 
+      :show-modal="isShowModal"
+      @close-modal="closeModal"
+    />
     <div class="post">
       <div class="post-avatar">
         <div class="user-img"></div>
@@ -138,13 +142,23 @@
 </template>
 
 <script>
+import ReplyModal from '../components/ReplyModal.vue'
+
 export default {
+  components: {
+    ReplyModal
+  },
+  data() {
+    return {
+      isShowModal: false
+    }
+  },
   methods: {
     showModal() {
-      // postId
-      let postId = '1'
-      console.log('postList-showModal',postId)
-      this.$emit("post-id", postId)
+      this.isShowModal = true
+    },
+    closeModal() {
+      this.isShowModal = false
     }
   }
 }

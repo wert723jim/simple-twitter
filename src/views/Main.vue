@@ -1,9 +1,5 @@
 <template>
 <div class="container">
-  <ReplyModal 
-    :show-modal="isShow"
-    @close-modal ="closeModal"
-  />
   <div class="nav">
     <Navbar />
   </div>
@@ -33,31 +29,14 @@ import Navbar from '../components/Navbar.vue'
 import Recommended from '../components/Recomended.vue'
 import CreatePost from '../components/CreatePost.vue'
 import PostList from '../components/PostList.vue'
-import ReplyModal from '../components/ReplyModal.vue'
 
 export default {
   components: {
     Navbar,
     Recommended,
     CreatePost,
-    PostList,
-    ReplyModal
+    PostList
   },
-  data() {
-    return {
-      isShow: false
-    }
-  },
-  methods: {
-    showModal(postId) {
-      console.log('main-showModal', postId)
-      this.isShow = true
-    },
-    closeModal(close) {
-      console.log(close)
-      this.isShow = false
-    }
-  }
 }
 </script>
 
