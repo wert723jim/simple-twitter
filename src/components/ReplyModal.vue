@@ -9,12 +9,37 @@
       >
         <img src="../assets/close_btn.png" alt="" class="close-btn">
       </div>
+      
       <div class="modal-body">
-        <div class="avatar-img">
-          <div class="user-img"></div>
+        <div class="post-review">
+          <div class="post-avatar">
+            <div class="user-img"></div>
+          </div>
+          <div class="post-wrapper">
+            <div class="post-avatar-info">
+              <div class="name">Apple</div>
+              <div class="id">@apple</div>
+              <span>・</span>
+              <div class="created-time">3小時</div>
+            </div>
+            <div class="post-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+              quisquam, facilis aperiam qui nisi fugit. Earum quidem nobis vel fugit
+              molestiae, deleniti facere praesentium natus illum aut iusto quibusdam
+              iste!
+            </div>
+            <div class="reply-to">
+              回覆給 <span>@apple</span>
+            </div>
+          </div>
         </div>
-        <div class="text-content">
-          <textarea name="" id="" cols="30" rows="5" placeholder="今天想說什麼?"></textarea>
+        <div class="reply-content">
+          <div class="avatar-img">
+            <div class="user-img"></div>
+          </div>
+          <div class="text-content">
+            <textarea name="" id="" cols="30" rows="5" placeholder="今天想說什麼?"></textarea>
+          </div>
         </div>
       </div>
       <div class="modal-footer">
@@ -77,7 +102,6 @@ export default {
     z-index: 1;
     margin: 0 auto;
     width: 634px;
-    height: 300px;
     background: #FFFFFF;
     border-radius: 14px;
   }
@@ -94,7 +118,73 @@ export default {
 
   .modal-body {
     display: flex;
+    flex-direction: column;
     padding: 16px 24px;
+  }
+
+  .post-review {
+    display: flex;
+  }
+
+  .post-wrapper {
+    margin-left: 8px;
+  }
+
+  .post-avatar {
+    position: relative;
+  }
+
+  .post-avatar::after {
+    content: '';
+    position: absolute;
+    border: 1px solid #B5B5BE;
+    top: 66px;
+    bottom: 0;
+  }
+
+  .user-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background: gray;
+  }
+
+  .post-content {
+    margin-bottom: 9px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #171725;
+  }
+
+  .reply-to {
+    margin-bottom: 15px;
+    text-align: left;
+    color: #657786;
+    font-size: 14px;
+  }
+
+  .reply-to span {
+    color:#FF6600;
+  }
+
+  .post-avatar-info {
+    display: flex;
+    margin-bottom: 8px;
+  }
+
+  .name {
+  margin-right: 8px;
+  }
+
+  .id,
+  .id ~ span,
+  .created-time {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #6C757D;
   }
 
   .user-img {
@@ -108,6 +198,11 @@ export default {
     text-align: left;
     width: 100%;
 
+  }
+
+  .reply-content {
+    display: flex;
+    padding-top: 16px;
   }
 
   textarea {
@@ -128,6 +223,7 @@ export default {
   .modal-footer {
     text-align: right;
     padding-right: 16px;
+    padding-bottom: 16px;
   }
 
   .btn {
