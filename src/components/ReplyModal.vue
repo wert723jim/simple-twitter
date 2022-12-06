@@ -76,7 +76,7 @@ export default {
   methods: {
     closeModal() {
       this.isShow = false
-      this.$emit("close-modal", false)
+      this.$emit("close-modal")
     }
   }
 }
@@ -88,6 +88,7 @@ export default {
     display: none;
     position: absolute;
     left: 0;
+    top: 0;
     height: 100%;
     width: 100%;
     padding-top: 56px;
