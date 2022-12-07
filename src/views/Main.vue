@@ -12,9 +12,7 @@
       <CreatePost />
     </div>
     <div class="post-list">
-      <PostList 
-        @post-id="showModal"
-      />
+      <PostList />
     </div>
   </div>
   <div class="recommended">

@@ -21,12 +21,18 @@
       <div class="scrollbar">
         <UserTop />
         <div class="user-tab">
-          <UserTab />
+          <UserTab 
+            @chosen-tab="displayChosenTab"
+          />
         </div>
-        <div class="post-list">
+        <div 
+          :class="['post-list', {show: chosenTab === 'tweets'}]"
+        >
           <PostList />
         </div>
-        <div class="reply-list">
+        <div
+          :class="['reply-list', {show: chosenTab === 'replies'}]"
+        >
           <ReplyList />
         </div>
       </div>
@@ -54,6 +60,16 @@ export default {
     UserTab,
     PostList,
     ReplyList
+  },
+  data() {
+    return {
+      chosenTab: 'tweets'
+    }
+  },
+  methods: {
+    displayChosenTab(tabName) {
+      this.chosenTab = tabName
+    }
   }
 }
 </script>
@@ -119,8 +135,12 @@ export default {
   }
 
   .reply-list {
-    /* display: none; */
+    display: none;
     height: 100%;
+  }
+
+  .show {
+    display: block;
   }
 
   .recommended {
