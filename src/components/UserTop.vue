@@ -1,5 +1,9 @@
 <template>
   <div class="user-container">
+    <UserEditModal
+      :show-modal="isShowModal"
+      @close-modal="closeModal"
+    />
     <div class="user-img">
       <div class="avatar-img">
         <img src="../assets/user_background.png" alt="" class="background-img">
@@ -7,7 +11,10 @@
           <div class="img"></div>
         </div>
       </div>
-      <button class="edit-btn">
+      <button
+        class="edit-btn"
+        @click="showUserEditModal"
+      >
         編輯個人資料
       </button>
     </div>
@@ -35,6 +42,28 @@
   </div>
 </template>
 
+<script>
+import UserEditModal from '../components/UserEditModal.vue'
+export default {
+  components: {
+    UserEditModal
+  },
+  data() {
+    return {
+      isShowModal: false
+    }
+  },
+  methods: {
+    showUserEditModal() {
+      this.isShowModal = true
+    },
+    closeModal() {
+      this.isShowModal = false
+    }
+  }
+}
+</script>
+
 <style scoped>
   .user-img {
     text-align: right;
@@ -44,6 +73,7 @@
   }
 
   .background-img {
+    display: block;
     width: 100%;
     height: 100%;
   }
