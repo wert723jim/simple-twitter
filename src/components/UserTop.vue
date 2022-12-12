@@ -30,11 +30,19 @@
       </div>
       <div class="user-counts">
         <div class="following-counts">
-          <span class="counts">34 個</span>
+          <router-link
+            :to="{name: 'user-followers', params: {id: 1}}"
+          >
+            <span class="counts">34個</span>
+          </router-link>
           <span>跟隨中</span>
         </div>
         <div class="follower-counts">
-          <span class="counts">59 位</span>
+          <router-link
+            :to="{name: 'user-followings', params: {id: 1}}"
+          >
+            <span class="counts">24個</span>
+          </router-link>
           <span>跟隨者</span>
         </div>
       </div>
