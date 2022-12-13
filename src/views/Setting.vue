@@ -6,7 +6,10 @@
   <div class="mid-column">
     <!-- title -->
     <div class="page-title">
-      <h4>設定</h4>
+      <h4>帳戶設定</h4>
+    </div>
+    <div class="table-container">
+      <UserFormTable />
     </div>
   </div>
   <div class="recommended">
@@ -19,11 +22,13 @@
 <script>
 import Navbar from '../components/Navbar.vue'
 import Recommended from '../components/Recomended.vue'
+import UserFormTable from '../components/UserFormTable.vue'
 
 export default {
   components: {
     Navbar,
     Recommended,
+    UserFormTable
   }
 }
 </script>
@@ -54,13 +59,8 @@ export default {
     border-bottom: 1px solid #E6ECF0;
   }
 
-  .create-post {
-    height: 136px;
-  }
-
-  .post-list {
-    height: 100%;
-    overflow-y: scroll;
+  .table-container {
+    margin: 24px 23px;
   }
 
   .recommended {
